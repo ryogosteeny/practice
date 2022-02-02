@@ -1,7 +1,7 @@
 import React, { VFC } from "react";
 import { DragResize } from "./DragResize";
 import { GlobalProvider } from "./GlobalProvider";
-import { createTheme, TextField, ThemeProvider } from "@mui/material";
+import { createTheme, TextField, ThemeProvider, css } from "@mui/material";
 
 const theme = createTheme({
   palette: {
@@ -16,7 +16,11 @@ export const App: VFC = () => {
     <GlobalProvider>
       <ThemeProvider theme={theme}>
         <DragResize />
-        <TextField />
+        <TextField
+          css={css`
+            background-color: blueviolet;
+          `}
+        />
       </ThemeProvider>
     </GlobalProvider>
   );
