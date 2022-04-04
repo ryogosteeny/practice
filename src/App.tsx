@@ -1,7 +1,11 @@
-import React, { useState, VFC } from "react";
+import React, { useCallback, useState, VFC } from "react";
+import "./App.css";
 import { GlobalProvider } from "./GlobalProvider";
 import { createTheme, ThemeProvider } from "@mui/material";
-import { Todo } from "./components/organisms/Todo";
+import { Counter } from "./components/atoms/Counter";
+import { Title } from "./components/atoms/Title";
+import { SubTitle } from "./components/atoms/SubTitle";
+import { Button } from "./components/atoms/Button";
 
 const theme = createTheme({
   palette: {
@@ -11,61 +15,36 @@ const theme = createTheme({
   },
 });
 
-export interface TodoList {
-  id: number;
-  todo: string;
-  complete: boolean;
-}
-
 export const App: VFC = () => {
-  const [inputText, setInputText] = useState<string>("");
-  const [todoStateItems, setTodoStateItems] = useState<TodoList[]>([
-    {
-      id: 1,
-      todo: "歯磨きする",
-      complete: false,
-    },
-    {
-      id: 2,
-      todo: "洗濯する",
-      complete: true,
-    },
-    {
-      id: 3,
-      todo: "買い物をする",
-      complete: false,
-    },
-  ]);
+  const [countA, setCountA] = useState<number>(0);
+  const [countB, setCountB] = useState<number>(0);
 
-  const changeTextHandler = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ): void => {
-    setInputText(event.target.value);
-  };
+  const handleCountUpA = useCallback(() => {
+    setCountA(countA + 1);
+  }, [countA]);
 
-  const clickAddTodoHandle = (): void => {
-    const newTodo: TodoList[] = [
-      ...todoStateItems,
-      {
-        id: 4,
-        todo: inputText,
-        complete: false,
-      },
-    ];
-    setTodoStateItems(newTodo);
-    setInputText("");
-  };
+  const handleCountUpB = useCallback(() => {
+    setCountB(countB + 1);
+  }, [countB]);
+
+  console.log("------------------------");
 
   return (
     <GlobalProvider>
-      <ThemeProvider theme={theme}>
-        <Todo
-          onChange={changeTextHandler}
-          value={inputText}
-          lists={todoStateItems}
-          onClick={clickAddTodoHandle}
-        />
-      </ThemeProvider>
+      <div className={"app"}>
+        <Title titleText={"#6 useCallBack"} />
+        <SubTitle subTitleText={"緊急アンケート：あなたはA派？それともB派"} />
+        <div className={"itemList"}>
+          <div className={"item"}>
+            <Counter counterTitle={"A派"} count={countA} />
+            <Button buttonText={"もちろんA派"} onClick={handleCountUpA} />
+          </div>
+          <div className={"item"}>
+            <Counter counterTitle={"B派"} count={countB} />
+            <Button buttonText={"もちろんB派"} onClick={handleCountUpB} />
+          </div>
+        </div>
+      </div>
     </GlobalProvider>
   );
 };
