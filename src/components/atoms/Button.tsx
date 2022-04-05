@@ -10,7 +10,7 @@ export const Button = React.memo(({ buttonText, onClick }: Props) => {
   console.log("Button :", `${buttonText}`);
 
   return (
-    <div className={"buttonDiv"}>
+    <div>
       <button onClick={onClick} className={"button"}>
         {buttonText}
       </button>
