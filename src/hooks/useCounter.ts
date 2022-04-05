@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 /**
  *   結論　カスタムフックを使用することで...
@@ -25,9 +25,9 @@ export const useCounter = () => {
    *  H callがあってmemoがない場合、親にレンダリングがあれば子は再レンダーしてしまうから
    *
    */
-  const handleCountUpA = useCallback(() => {
+  const handleCountUpCallBack = useCallback(() => {
     setCount((prevState) => prevState + 1);
   }, []); // 初回レンダリング時のみレンダーされる
 
-  return { count, handleCountUpA };
+  return { count, handleCountUpCallBack };
 };

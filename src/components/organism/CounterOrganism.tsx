@@ -1,19 +1,22 @@
 import React from "react";
 import { Counter } from "../atoms/Counter";
-import { Button } from "../atoms/Button";
-import { useCounter } from "../../hooks/useCounter";
+import { Title } from "../atoms/Title";
+import { SubTitle } from "../atoms/SubTitle";
+import "./CounterOrganism.css";
 
-interface Props {
-  counterTitle: string;
-  buttonText: string;
-}
-
-export const CounterOrganism = ({ counterTitle, buttonText }: Props) => {
-  const { count, handleCountUpA } = useCounter();
+export const CounterOrganism = () => {
   return (
     <div className={"item"}>
-      <Counter counterTitle={counterTitle} count={count} />
-      <Button buttonText={buttonText} onClick={handleCountUpA} />
+      <Title titleText={"# hooks"} />
+      <SubTitle subTitleText={"緊急アンケート"} />
+      <div className={"itemList"}>
+        <div className={"itemCounter"}>
+          <Counter counterTitle={"A派"} buttonText={"もちろんA派"} />
+        </div>
+        <div className={"itemCounter"}>
+          <Counter counterTitle={"B派"} buttonText={"もちろんB派"} />
+        </div>
+      </div>
     </div>
   );
 };
