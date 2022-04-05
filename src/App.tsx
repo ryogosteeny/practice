@@ -1,11 +1,11 @@
-import React, { useCallback, useState, VFC } from "react";
+import React, { VFC } from "react";
 import "./App.css";
 import { GlobalProvider } from "./GlobalProvider";
-import { createTheme, ThemeProvider } from "@mui/material";
-import { Counter } from "./components/atoms/Counter";
+import { createTheme } from "@mui/material";
 import { Title } from "./components/atoms/Title";
 import { SubTitle } from "./components/atoms/SubTitle";
-import { Button } from "./components/atoms/Button";
+import { CounterOrganism } from "./components/organism/CounterOrganism";
+import { useCounter } from "./hooks/useCounter";
 
 const theme = createTheme({
   palette: {
@@ -16,33 +16,17 @@ const theme = createTheme({
 });
 
 export const App: VFC = () => {
-  const [countA, setCountA] = useState<number>(0);
-  const [countB, setCountB] = useState<number>(0);
-
-  const handleCountUpA = useCallback(() => {
-    setCountA(countA + 1);
-  }, [countA]);
-
-  const handleCountUpB = useCallback(() => {
-    setCountB(countB + 1);
-  }, [countB]);
-
-  console.log("------------------------");
+  console.log("------------------------App.tsx");
 
   return (
     <GlobalProvider>
       <div className={"app"}>
-        <Title titleText={"#6 useCallBack"} />
-        <SubTitle subTitleText={"緊急アンケート：あなたはA派？それともB派"} />
+        <Title titleText={"# CustomHooks"} />
+        <SubTitle subTitleText={"緊急アンケート：あなたはA派？それともB派？"} />
         <div className={"itemList"}>
-          <div className={"item"}>
-            <Counter counterTitle={"A派"} count={countA} />
-            <Button buttonText={"もちろんA派"} onClick={handleCountUpA} />
-          </div>
-          <div className={"item"}>
-            <Counter counterTitle={"B派"} count={countB} />
-            <Button buttonText={"もちろんB派"} onClick={handleCountUpB} />
-          </div>
+          <CounterOrganism counterTitle={"A派"} buttonText={"もちろんA派"} />
+          <CounterOrganism counterTitle={"B派"} buttonText={"もちろんB派"} />
+          <CounterOrganism counterTitle={"C派"} buttonText={"もちろんC派"} />
         </div>
       </div>
     </GlobalProvider>
