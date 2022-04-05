@@ -6,11 +6,11 @@ interface Props {
   count: number;
 }
 
-export const Counter = React.memo(({ counterTitle, count }: Props) => {
+export const Counter = ({ counterTitle, count }: Props) => {
   console.log("Counter :", `${counterTitle}`);
   return (
     <div className={"counter"}>
       {counterTitle}:<span className={"count"}>{count}</span>
     </div>
   );
-});
+};
