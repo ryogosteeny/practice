@@ -2,8 +2,7 @@ import React, { VFC } from "react";
 import "./App.css";
 import { GlobalProvider } from "./GlobalProvider";
 import { createTheme } from "@mui/material";
-import { CounterOrganism } from "./components/organism/CounterOrganism";
-import { DescBox } from "./components/organism/DescBox";
+import { Header } from "./components/atoms/Header";
 
 const theme = createTheme({
   palette: {
@@ -19,8 +18,9 @@ export const App: VFC = () => {
   return (
     <GlobalProvider>
       <div className={"app"}>
-        <CounterOrganism />
-        <DescBox />
+        <Header title={"映画の作品"} />
+        {/*<CounterOrganism />*/}
+        {/*<DescBox />*/}
       </div>
     </GlobalProvider>
   );
