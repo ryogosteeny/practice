@@ -1,23 +1,38 @@
 import React from "react";
 import "./Movie.css";
+import { MovieType } from "../organism/Film";
 
 interface Props {
-  title: string;
-  year: string;
+  movie: MovieType;
 }
 
-export const Movie = ({ title, year }: Props) => {
+/**
+ * todo 定数ファイルへ移動させた方が良い
+ */
+const MOVIE_IMAGES_API = `https://image.tmdb.org/t/p/w300_and_h450_bestv2/`;
+
+export const Movie = ({ movie }: Props) => {
+  /**
+   * 定義していくのは良いのか疑問
+   */
+  const release = movie.release_date.split("-");
+  const releaseYear = release[0];
+  const releaseMonth = release[1];
+  const releaseDay = release[2];
+
   return (
     <div className="movie">
-      <h2>{title}</h2>
+      <h2 className="h2 h2__text-overflow-ellipsis">{movie.title}</h2>
       <div>
         <img
-          src="https://1.bp.blogspot.com/-noejtvMJM8Q/V4SA7f_DLbI/AAAAAAAA8OM/Ajwehtq2jCgO2QvPdxGJz5I290VyUZVLQCLcB/s400/dog_akitainu.png"
-          alt="dog"
+          src={`${MOVIE_IMAGES_API}${movie.poster_path}`}
+          alt={movie.title}
           width="200"
         />
       </div>
-      <p className="release-year">{year}年公開</p>
+      <p className="release-year">
+        {`${releaseYear}年${releaseMonth}月${releaseDay}日公開`}
+      </p>
     </div>
   );
 };
