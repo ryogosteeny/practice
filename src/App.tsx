@@ -3,6 +3,8 @@ import "./App.css";
 import { GlobalProvider } from "./GlobalProvider";
 import { createTheme } from "@mui/material";
 import { Header } from "./components/atoms/Header";
+import { Search } from "./components/atoms/Search";
+import { Movie } from "./components/atoms/Movie";
 
 const theme = createTheme({
   palette: {
@@ -19,6 +21,8 @@ export const App: VFC = () => {
     <GlobalProvider>
       <div className={"app"}>
         <Header title={"映画の作品"} />
+        <Search />
+        <Movie title={"ここに映画のタイトルを挿入"} year={"2018"} />
         {/*<CounterOrganism />*/}
         {/*<DescBox />*/}
       </div>

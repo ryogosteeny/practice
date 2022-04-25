@@ -1,0 +1,9 @@
+.movie {
+    max-width: 200px;
+    text-align: center;
+    padding: 0 16px;
+}
+
+.release-year {
+    font-size: 1.4rem;
+}
