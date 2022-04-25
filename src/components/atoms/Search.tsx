@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Search.css";
 
+// TODO 検索機能を作成する
 export const Search = () => {
   const [searchValue, setSearchValue] = useState<string>("");
 
