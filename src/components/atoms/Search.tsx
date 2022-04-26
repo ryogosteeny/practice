@@ -1,23 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Search.css";
+import { useSearch } from "../../hooks/useSearch";
 
-// TODO 検索機能を作成する
-export const Search = () => {
-  const [searchValue, setSearchValue] = useState<string>("");
+interface Props {
+  search: (searchValue: string) => void;
+}
 
-  const handleSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value);
-  };
-
-  const resetInputField = () => {
-    setSearchValue("");
-  };
-
-  const callSearchFunction = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    resetInputField();
-  };
-
+export const Search = React.memo(({ search }: Props) => {
+  const { searchValue, handleSearchValue, callSearchFunction } = useSearch();
   return (
     <form className="search search-layout">
       <input
@@ -29,10 +19,10 @@ export const Search = () => {
       <button
         className="btn btn-main btn-layout"
         type="submit"
-        onClick={callSearchFunction}
+        onClick={(e) => callSearchFunction(e, search)}
       >
         検索
       </button>
     </form>
   );
-};
+});

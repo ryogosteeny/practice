@@ -14,7 +14,6 @@
 .input {
     width: 560px;
     font-size: 1.6rem;
-    line-height: 1.4;
     padding: 6px 0;
 }
 
@@ -33,13 +32,13 @@
     color: white;
 }
 
-.btn-layout {
-    margin-left: 8px;
-}
-
 .btn-main:hover,
 .btn-main:focus {
     color: #13448f;
     background-color: #ffffff;
     border:1px solid currentColor;
+}
+
+.btn-layout {
+    margin-left: 8px;
 }

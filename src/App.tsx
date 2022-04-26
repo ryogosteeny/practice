@@ -1,4 +1,4 @@
-import React, { useEffect, useState, VFC } from "react";
+import React, { VFC } from "react";
 import "./App.css";
 import { GlobalProvider } from "./GlobalProvider";
 import { createTheme } from "@mui/material";
