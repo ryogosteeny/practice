@@ -16,10 +16,6 @@ export interface MovieType {
   poster_path: string;
 }
 
-/**
- * containerComponent
- * @constructor
- */
 export const Film = () => {
   const [movies, setMovies] = useState<MovieType[]>([]);
 
@@ -34,10 +30,6 @@ export const Film = () => {
       .catch((e) => console.log(e.message));
   }, []);
 
-  /**
-   * todo urlをMovie.tsに移動してもクエリーストリングを使用したい
-   * @param searchValue
-   */
   const search = async (searchValue: string) =>
     await axios
       .get(
