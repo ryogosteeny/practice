@@ -21,9 +21,9 @@ export const App: VFC = () => {
     <BrowserRouter>
       <GlobalProvider>
         <Routes>
-          <Route index element={<CounterOrganism />} />
+          <Route index element={<DescBox />} />
           <Route path="movies" element={<Film />} />
-          <Route path="comingsoon" element={<DescBox />} />
+          <Route path="comingsoon" element={<CounterOrganism />} />
         </Routes>
       </GlobalProvider>
     </BrowserRouter>
