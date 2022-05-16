@@ -1,3 +1,8 @@
+.page__header__color {
+    background-color: #343434;
+    color: #cecece;
+}
+
 .movie-list {
     list-style: none;
     padding-left: 0;
@@ -18,3 +23,22 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.content-has-column {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.content__main {
+    flex: 1;
+    height: 100%;
+    background-color: #141414;
+    color: #cecece;
+}
+
+.content__side {
+    background-color: #343434;
+    color: #cecece;
+}
+
+/*ここで色指定レイアウトを指定していればここをインポートしていれば良くなる*/

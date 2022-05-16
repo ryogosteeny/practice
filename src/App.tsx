@@ -3,7 +3,6 @@ import "./App.css";
 import { GlobalProvider } from "./GlobalProvider";
 import { createTheme } from "@mui/material";
 import { Film } from "./components/organism/Film";
-import { LocalNav } from "./components/organism/LocalNav";
 
 const theme = createTheme({
   palette: {
@@ -19,8 +18,7 @@ export const App: VFC = () => {
   return (
     <GlobalProvider>
       <div className={"app"}>
-        {/*<Film />*/}
-        <LocalNav />
+        <Film />
       </div>
     </GlobalProvider>
   );

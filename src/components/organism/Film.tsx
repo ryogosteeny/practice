@@ -5,6 +5,7 @@ import { Search } from "../atoms/Search";
 import { Movie } from "../atoms/Movie";
 import axios from "axios";
 import { MOVIE_POPULAR_API, MY_API_KEY } from "../../api/Movie";
+import { LocalNav } from "./LocalNav";
 
 /**
  * todo 型定義ファイルへ移動させた方が良い
@@ -43,15 +44,24 @@ export const Film = () => {
 
   return (
     <div>
-      <Header title={"映画の作品"} />
-      <Search search={search} />
-      <ul className="movie-list movie-layout">
-        {movies.map((movie: MovieType) => (
-          <li className="movie-list__item" key={movie.id}>
-            <Movie movie={movie} />
-          </li>
-        ))}
-      </ul>
+      <div className="page__header__color">
+        <Header title={"映画の作品"} />
+      </div>
+      <div className="content-has-column">
+        <main className="content__main">
+          <Search search={search} />
+          <ul className="movie-list movie-layout">
+            {movies.map((movie: MovieType) => (
+              <li className="movie-list__item" key={movie.id}>
+                <Movie movie={movie} />
+              </li>
+            ))}
+          </ul>
+        </main>
+        <aside className="content__side">
+          <LocalNav />
+        </aside>
+      </div>
     </div>
   );
 };

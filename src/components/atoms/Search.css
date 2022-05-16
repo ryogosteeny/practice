@@ -6,7 +6,7 @@
 
 .search {
     max-width: 1232px;
-    margin: 0 auto;
+    margin: 24px auto;
     padding: 16px;
 }
 
@@ -15,6 +15,8 @@
     width: 560px;
     font-size: 1.6rem;
     padding: 6px 0;
+    border-color: transparent;
+    border-radius: 4px;
 }
 
 .btn {
@@ -22,21 +24,23 @@
     max-width: 100%;
     width: 160px;
     padding: 6px;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-radius: 4px;
     font-size: 1.6rem;
+    cursor: pointer;
 }
 
 .btn-main {
-    background-color: #13448f;
-    color: white;
+    background-color: #e50914;
+    color: #cecece;
 }
 
 .btn-main:hover,
 .btn-main:focus {
-    color: #13448f;
-    background-color: #ffffff;
-    border:1px solid currentColor;
+    color: #e50914;
+    background-color: #f6f4f4;
+    border:2px solid currentColor;
+    transition: .15s;
 }
 
 .btn-layout {

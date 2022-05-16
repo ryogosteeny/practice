@@ -22,7 +22,7 @@ export const LocalNav = () => {
   ];
 
   return (
-    <div className="local-nav nav__color">
+    <div className="local-nav">
       <div className="nav-box local-nav__height-20">
         <h2 className="nav-title">メニューリスト</h2>
       </div>

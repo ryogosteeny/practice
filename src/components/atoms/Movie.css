@@ -1,6 +1,7 @@
 .h2 {
     font-size: 1.6rem;
 }
+
 .h2__text-overflow-ellipsis {
     white-space: nowrap;
     overflow: hidden;
