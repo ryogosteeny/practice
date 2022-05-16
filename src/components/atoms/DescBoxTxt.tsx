@@ -2,26 +2,17 @@ import React from "react";
 import "./DescBoxTxt.css";
 
 interface Props {
-  isVisible: boolean;
+  description: string;
 }
 
-export const DescBoxTxt = React.memo(({ isVisible }: Props) => {
-  // todo stateの値によって表示非表示切り替える
+export const DescBoxTxt = React.memo(({ description }: Props) => {
   console.log("DescBoxTxt");
 
   return (
-    <div className={"txtBox"}>
-      {isVisible ? (
-        <p>
-          このページは付箋をpostするページです。
-          <br />
-          各色のボタンを押すことで付箋の色を変更することができます。
-          <br />
-          それぞれの一覧から各ページの付箋リストを見ることができます。
-        </p>
-      ) : (
-        <p>説明文は非表示になっています。</p>
-      )}
+    <div className="txtBox">
+      <p>{description}</p>
     </div>
   );
 });
+
+// TODO　このコンポーネントは404ページとサイト紹介のページで使用する
