@@ -1,5 +1,14 @@
 .item {
-    margin-right: 16px;
+    text-align: center;
+    max-width: 1236px;
+    max-height: 100%;
+    padding: 16px;
+}
+
+.item-layout {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
 
 .itemList {
