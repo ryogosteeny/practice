@@ -1,8 +1,10 @@
 import React, { VFC } from "react";
-import "./App.css";
 import { GlobalProvider } from "./GlobalProvider";
 import { createTheme } from "@mui/material";
 import { Film } from "./components/organism/Film";
+import { Routes, BrowserRouter, Route, Link } from "react-router-dom";
+import { DescBox } from "./components/organism/DescBox";
+import { CounterOrganism } from "./components/organism/CounterOrganism";
 
 const theme = createTheme({
   palette: {
@@ -16,10 +18,14 @@ export const App: VFC = () => {
   console.log("------------------------App.tsx");
 
   return (
-    <GlobalProvider>
-      <div className={"app"}>
-        <Film />
-      </div>
-    </GlobalProvider>
+    <BrowserRouter>
+      <GlobalProvider>
+        <Routes>
+          <Route index element={<CounterOrganism />} />
+          <Route path="movies" element={<Film />} />
+          <Route path="comingsoon" element={<DescBox />} />
+        </Routes>
+      </GlobalProvider>
+    </BrowserRouter>
   );
 };
