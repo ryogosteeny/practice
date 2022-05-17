@@ -1,6 +1,6 @@
 import React from "react";
-import "./Movie.css";
 import { MovieType } from "../organism/Film";
+import "./Movie.css";
 
 interface Props {
   movie: MovieType;

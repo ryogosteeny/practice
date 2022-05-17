@@ -1,18 +1,16 @@
 import React from "react";
-import { Counter } from "../molecules/Counter";
+import { Header } from "../atoms/Header";
 import { Title } from "../atoms/Title";
 import { SubTitle } from "../atoms/SubTitle";
-import "./CounterOrganism.css";
-import "./Film.css";
+import { Counter } from "../molecules/Counter";
 import { LocalNav } from "../atoms/LocalNav";
-import { Header } from "../atoms/Header";
+import "./CounterOrganism.css";
+import "./PageLy.css";
 
 export const CounterOrganism = () => {
   return (
     <div>
-      <div className="page__header__color">
-        <Header title={"Counter"} />
-      </div>
+      <Header title={"Counter"} />
       <div className="content-has-column">
         <main className="content__main">
           <div className="item item-layout">

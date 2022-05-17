@@ -5,24 +5,23 @@ import { DescHead } from "../atoms/DescHead";
 import { DescBoxTxt } from "../atoms/DescBoxTxt";
 import { MainButton } from "../atoms/MainButton";
 import { LocalNav } from "../atoms/LocalNav";
-import "./Film.css";
+import "./PageLy.css";
 
 export const DescBox = () => {
   const navigate = useNavigate();
-  const toMovies = useCallback(() => navigate("/movies"), []); // todo パフォーマンスが良いのか調査する
+  const toMovies = () => navigate("/movies");
+
   return (
     <div>
-      <div className="page__header__color">
-        <Header title={"サイト概要"} />
-      </div>
+      <Header title={"サイト概要"} />
       <div className="content-has-column">
         <main className="content__main">
           <div className="desc-box">
-            {/*  TODO コンテンツを真ん中に配置したいならdesc-boxをcssに追加、どのファイルに入れるか悩む*/}
+            {/*TODO あまりこの命名はいけてない、変更した方が良さそう*/}
             <DescHead title={"このサイトについて"} />
             <DescBoxTxt
               description={
-                "映画を検索するサイトです好きな映画を検索してみましょう"
+                "映画を検索するサイトです好きな映画を検索してみましょうまた今後いろんな機能を盛り込んでいくのでぜひ期待していてください"
               }
             />
             <MainButton onClick={toMovies} btnText={"映画を探す"} />

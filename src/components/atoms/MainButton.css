@@ -10,6 +10,7 @@
 .main-btn {
     background-color: #e50914;
     color: #cecece;
+    transition: .25s;
 }
 
 .main-btn:hover,
@@ -17,5 +18,4 @@
     background-color: #cecece;
     border: 2px solid currentColor;
     color: #e50914;
-    transition: .15s;
 }
