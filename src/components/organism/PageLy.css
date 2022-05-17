@@ -1,0 +1,27 @@
+/*ここにDescBoxのスタイル書くのはどうだろうか？*/
+.desc-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    padding: 32px 16px;
+    max-width: 1232px;
+    max-height: 50%;
+/* このheightは決め打ちしている*/
+}
+
+.content-has-column {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.content__main {
+    flex: 1;
+    max-height: 100%;
+}
+
+.content__side {
+    background-color: #343434;
+    flex: 0 0 264px;
+}

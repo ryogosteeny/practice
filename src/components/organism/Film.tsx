@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import "./Film.css";
+import axios from "axios";
+import { MOVIE_POPULAR_API, MY_API_KEY } from "../../api/Movie";
 import { Header } from "../atoms/Header";
 import { Search } from "../molecules/Search";
 import { Movie } from "../atoms/Movie";
-import axios from "axios";
-import { MOVIE_POPULAR_API, MY_API_KEY } from "../../api/Movie";
 import { LocalNav } from "../atoms/LocalNav";
+import "./Film.css";
+import "./PageLy.css";
 
 /**
  * todo 型定義ファイルへ移動させた方が良い
@@ -44,9 +45,7 @@ export const Film = () => {
 
   return (
     <div>
-      <div className="page__header__color">
-        <Header title={"映画の作品"} />
-      </div>
+      <Header title={"映画の作品"} />
       <div className="content-has-column">
         <main className="content__main">
           <Search search={search} />
@@ -65,5 +64,3 @@ export const Film = () => {
     </div>
   );
 };
-
-// todo ルーティングする
