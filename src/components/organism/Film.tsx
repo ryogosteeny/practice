@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Film.css";
 import { Header } from "../atoms/Header";
-import { Search } from "../atoms/Search";
+import { Search } from "../molecules/Search";
 import { Movie } from "../atoms/Movie";
 import axios from "axios";
 import { MOVIE_POPULAR_API, MY_API_KEY } from "../../api/Movie";
-import { LocalNav } from "./LocalNav";
+import { LocalNav } from "../atoms/LocalNav";
 
 /**
  * todo 型定義ファイルへ移動させた方が良い

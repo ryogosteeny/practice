@@ -1,23 +1,27 @@
 import React from "react";
-import "./Nav.css";
+import { useNavigate } from "react-router-dom";
+import "../organism/Nav.css";
 
 interface NavType {
   name: string;
+  transition: () => void;
 }
 
 export const LocalNav = () => {
+  const navigate = useNavigate();
+
   const localNavMenu: NavType[] = [
     {
-      name: "TODO",
-      // todo 各コンポーネントへ遷移する関数を入れる
+      name: "HOME",
+      transition: () => navigate("/"),
     },
     {
       name: "映画作品",
-      // todo 各コンポーネントへ遷移する関数を入れる
+      transition: () => navigate("/movies"),
     },
     {
-      // todo 各コンポーネントへ遷移する関数を入れる
       name: "ComingSoon",
+      transition: () => navigate("/comingSoon"),
     },
   ];
 
@@ -29,7 +33,11 @@ export const LocalNav = () => {
       <nav>
         <ul className="nav-list">
           {localNavMenu.map((navItem) => (
-            <li className="nav-list__item" key={navItem.name}>
+            <li
+              className="nav-list__item"
+              key={navItem.name}
+              onClick={navItem.transition}
+            >
               {navItem.name}
             </li>
           ))}
@@ -38,5 +46,3 @@ export const LocalNav = () => {
     </div>
   );
 };
-
-// TODO 各ページへ遷移させる
