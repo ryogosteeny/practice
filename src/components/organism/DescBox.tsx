@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import { Header } from "../atoms/Header";
 import { DescHead } from "../atoms/DescHead";
 import { DescBoxTxt } from "../atoms/DescBoxTxt";
 import { MainButton } from "../atoms/MainButton";
-import { Header } from "../atoms/Header";
-import { LocalNav } from "./LocalNav";
+import { LocalNav } from "../atoms/LocalNav";
 import "./Film.css";
 
 export const DescBox = () => {
+  const navigate = useNavigate();
+  const toMovies = useCallback(() => navigate("/movies"), []); // todo パフォーマンスが良いのか調査する
   return (
     <div>
       <div className="page__header__color">
@@ -22,10 +25,7 @@ export const DescBox = () => {
                 "映画を検索するサイトです好きな映画を検索してみましょう"
               }
             />
-            <MainButton
-              onClick={() => alert("ページを遷移する")} // todo ここは関数を受け取れるようにする
-              btnText={"映画を探す"}
-            />
+            <MainButton onClick={toMovies} btnText={"映画を探す"} />
           </div>
         </main>
         <aside className="content__side">

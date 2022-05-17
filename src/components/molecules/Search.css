@@ -1,0 +1,21 @@
+.search-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    margin: 24px auto;
+    padding: 16px;
+    max-width: 1232px;
+}
+
+
+.input {
+    margin-right: 8px;
+    padding: 6px 0;
+    width: 560px;
+    font-size: 1.6rem;
+    border-color: transparent;
+    border-radius: 4px;
+}

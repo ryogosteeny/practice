@@ -2,7 +2,7 @@ import React, { VFC } from "react";
 import { GlobalProvider } from "./GlobalProvider";
 import { createTheme } from "@mui/material";
 import { Film } from "./components/organism/Film";
-import { Routes, BrowserRouter, Route, Link } from "react-router-dom";
+import { Routes, BrowserRouter, Route } from "react-router-dom";
 import { DescBox } from "./components/organism/DescBox";
 import { CounterOrganism } from "./components/organism/CounterOrganism";
 
@@ -23,7 +23,7 @@ export const App: VFC = () => {
         <Routes>
           <Route index element={<DescBox />} />
           <Route path="movies" element={<Film />} />
-          <Route path="comingsoon" element={<CounterOrganism />} />
+          <Route path="comingSoon" element={<CounterOrganism />} />
         </Routes>
       </GlobalProvider>
     </BrowserRouter>

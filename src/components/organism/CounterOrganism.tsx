@@ -1,10 +1,10 @@
 import React from "react";
-import { Counter } from "../atoms/Counter";
+import { Counter } from "../molecules/Counter";
 import { Title } from "../atoms/Title";
 import { SubTitle } from "../atoms/SubTitle";
 import "./CounterOrganism.css";
 import "./Film.css";
-import { LocalNav } from "./LocalNav";
+import { LocalNav } from "../atoms/LocalNav";
 import { Header } from "../atoms/Header";
 
 export const CounterOrganism = () => {

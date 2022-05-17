@@ -1,6 +1,7 @@
 import React from "react";
-import "./Search.css";
 import { useSearch } from "../../hooks/useSearch";
+import { MainButton } from "../atoms/MainButton";
+import "./Search.css";
 
 interface Props {
   search: (searchValue: string) => void;
@@ -16,13 +17,14 @@ export const Search = React.memo(({ search }: Props) => {
         value={searchValue}
         onChange={handleSearchValue}
       />
-      <button
-        className="btn btn-main btn-layout"
-        type="submit"
-        onClick={(e) => callSearchFunction(e, search)}
-      >
-        検索
-      </button>
+      <MainButton
+        btnText={"検索"}
+        onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+          callSearchFunction(e, search)
+        }
+      />
     </form>
   );
 });
+
+// TODO atom単位のボタンの正しいコンポーネント設計
