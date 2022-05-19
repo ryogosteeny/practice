@@ -1,0 +1,31 @@
+.text-field-ly {
+    display: flex;
+    flex-direction: column;
+    max-width: 352px;
+    width: 100%;
+    padding: 0 8px;
+}
+
+.label {
+    display: inline-block;
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+}
+
+.text-field {
+    height: 32px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: 1.4rem;
+}
+
+.helper-text {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-top: 8px;
+}
+
+.helper-text__warning {
+    color: #DB2C30;
+}
