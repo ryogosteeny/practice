@@ -15,10 +15,10 @@ export const Movie = ({ movie }: Props) => {
   /**
    * 定義していくのは良いのか疑問
    */
-  const release = movie.release_date.split("-");
-  const releaseYear = release[0];
-  const releaseMonth = release[1];
-  const releaseDay = release[2];
+  const disassemblyReleaseDate = movie.release_date.split("-");
+  const releaseYear = disassemblyReleaseDate[0];
+  const releaseMonth = disassemblyReleaseDate[1];
+  const releaseDay = disassemblyReleaseDate[2];
 
   return (
     <div className="movie">

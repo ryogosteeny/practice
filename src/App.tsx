@@ -5,6 +5,8 @@ import { Film } from "./components/organism/Film";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import { CounterOrganism } from "./components/organism/CounterOrganism";
 import { TextField } from "./components/atoms/TextField";
+import { Contact } from "./components/organism/Contact";
+import { DescBox } from "./components/organism/DescBox";
 
 const theme = createTheme({
   palette: {
@@ -21,16 +23,9 @@ export const App: VFC = () => {
     <BrowserRouter>
       <GlobalProvider>
         <Routes>
-          <Route
-            index
-            element={
-              <TextField
-                label={"名前"}
-                helperText={"10文字以上にしてください"}
-              />
-            }
-          />
+          <Route index element={<DescBox />} />
           <Route path="movies" element={<Film />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="comingSoon" element={<CounterOrganism />} />
         </Routes>
       </GlobalProvider>

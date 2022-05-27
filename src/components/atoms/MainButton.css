@@ -5,6 +5,7 @@
     font-size: 16px;
     border-radius: 10px;
     border: 2px solid transparent;
+    cursor: pointer;
 }
 
 .main-btn {
@@ -18,4 +19,9 @@
     background-color: #cecece;
     border: 2px solid currentColor;
     color: #e50914;
+}
+
+.btn__disabled {
+    background-color: #cecece;
+    cursor: auto;
 }
