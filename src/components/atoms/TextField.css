@@ -1,23 +1,44 @@
 .text-field-ly {
     display: flex;
     flex-direction: column;
-    max-width: 352px;
-    width: 100%;
-    padding: 0 8px;
+    max-width: 100%;
 }
 
 .label {
-    display: inline-block;
     font-size: 1.6rem;
     margin-bottom: 4px;
 }
 
+.required {
+    color: #e50914;
+}
+
+.required__display-none {
+    display: none;
+}
+
 .text-field {
+    /*TODO 今後テキストフィールドをお問い合わせ以外のページで作成することを考えたらここのheightは動的に動かせるようにした方が良い*/
     height: 32px;
+    padding: 0 8px;
     border: 1px solid transparent;
     border-radius: 2px;
     box-sizing: border-box;
-    font-size: 1.4rem;
+    font-size: 14px;
+    outline: transparent solid 2px;
+    color: #cecece;
+    background-color: #292929;
+    transition: .15s;
+}
+
+.text-field:hover {
+    outline: #686868 solid 2px;
+    background-color: #0f0f0f;
+}
+
+.text-field:focus {
+    outline: #cfcfcf solid 2px;
+    background-color: #0f0f0f;
 }
 
 .helper-text {

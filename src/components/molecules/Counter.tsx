@@ -16,7 +16,11 @@ export const Counter = ({ counterTitle, buttonText }: Props) => {
       <div className="counter__item">
         {counterTitle}:{count}
       </div>
-      <MainButton btnText={buttonText} onClick={handleCountUpCallBack} />
+      <MainButton
+        btnText={buttonText}
+        onClick={handleCountUpCallBack}
+        type={"button"}
+      />
     </div>
   );
 };

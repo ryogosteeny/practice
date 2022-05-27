@@ -19,6 +19,7 @@ export const Search = React.memo(({ search }: Props) => {
       />
       <MainButton
         btnText={"検索"}
+        type={"button"}
         onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
           callSearchFunction(e, search)
         }

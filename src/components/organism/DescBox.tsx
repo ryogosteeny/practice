@@ -24,7 +24,11 @@ export const DescBox = () => {
                 "映画を検索するサイトです好きな映画を検索してみましょうまた今後いろんな機能を盛り込んでいくのでぜひ期待していてください"
               }
             />
-            <MainButton onClick={toMovies} btnText={"映画を探す"} />
+            <MainButton
+              onClick={toMovies}
+              btnText={"映画を探す"}
+              type={"button"}
+            />
           </div>
         </main>
         <aside className="content__side">

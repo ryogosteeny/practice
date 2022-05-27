@@ -1,0 +1,37 @@
+.form-area {
+    /*　TODO これ以上をここにコンテンツを入れないのであればmarginを設定しても良い */
+    margin: 0 auto;
+    max-width: 352px;
+    width: 100%;
+    padding: 0 8px;
+}
+.user-name-area {
+    margin-top: 16px;
+}
+
+
+.mail-address-area {
+    margin-top: 16px;
+}
+
+.phone-number-area {
+    margin-top: 16px;
+}
+
+.text-area-box {
+    margin-top: 16px;
+    max-width: 346px;
+    width: 100%;
+}
+
+.text-area {
+    margin-top: 16px;
+    max-width: 100%;
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+}
+
+.submit-area {
+    margin-top: 16px;
+}

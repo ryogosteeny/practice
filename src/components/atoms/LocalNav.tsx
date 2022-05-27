@@ -20,6 +20,10 @@ export const LocalNav = () => {
       transition: () => navigate("/movies"),
     },
     {
+      name: "お問い合わせ",
+      transition: () => navigate("/contact"),
+    },
+    {
       name: "ComingSoon",
       transition: () => navigate("/comingSoon"),
     },
